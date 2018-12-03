@@ -6,5 +6,23 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
-    //
+    public function index()
+    {
+        return view();
+    }
+
+    public function contact()
+    {
+
+    }
+
+    public function requestPrice()
+    {
+
+    }
+
+    public function newsfeed()
+    {
+
+    }
 }
