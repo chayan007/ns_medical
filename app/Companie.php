@@ -5,9 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Categorie extends Model
+class Companie extends Model
 {
     use Notifiable;
 
-    protected $fillable = ['category'];
+    protected $fillable = ['company'];
 }
