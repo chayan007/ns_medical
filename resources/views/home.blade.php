@@ -102,6 +102,7 @@
                         <div class="product_extra product_new"><a href="categories.html">New</a></div>
                         <div class="product_content">
                             <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                            <span class="badge badge-pill badge-info">Company</span>
                             <div class="product_price">$670</div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@
 
 <!-- Menu -->
 
-{{--@   @include('includes.menu')--}}
+@include('includes.menu')
  @yield('content')
 
     <!-- Newsletter -->
