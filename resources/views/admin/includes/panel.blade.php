@@ -5,7 +5,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+            <a class="navbar-brand" href="./">NS Medical</a>
             <a class="navbar-brand hidden" href="./"><i class="fa fa-signal"></i></a>
         </div>
 
@@ -16,7 +16,7 @@
                 </li>
                 <h3 class="menu-title">Products</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Products</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Add</a></li>
                         <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Delete</a></li>
@@ -26,7 +26,7 @@
                 <h3 class="menu-title">Company</h3><!-- /.menu-title -->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Companies</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Add</a></li>
                         <li><i class="fa fa-exclamation-triangle"></i><a href="font-themify.html">Delete</a></li>
@@ -34,7 +34,7 @@
                 </li>
                 <h3 class="menu-title">Categories</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-balance-scale"></i><a href="page-login.html">Add</a></li>
                         <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="page-register.html">Delete</a></li>
