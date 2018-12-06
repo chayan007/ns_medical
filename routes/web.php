@@ -23,5 +23,5 @@ Route::get('/admin', function () {
    return view('admin.layouts.admin');
 });
 Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
+    return view('admin.addProduct');
 });
