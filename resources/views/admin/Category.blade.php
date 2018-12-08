@@ -17,9 +17,10 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($categories as $category)
                     <tr>
-                        <td>1</td>
-                        <td>XRay</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $category->category }}</td>
                         <td><!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal"
                                     data-target="#modelId">
@@ -35,13 +36,13 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
-                                            <h4 class="modal-title" id="modelTitleId">Update Category</h4>
+                                            <h4 class="modal-title" id="modelTitleId">Update {{ $category }}</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="/updateCategory" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                            <form action="/updateCategory/{{ $category->id }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                                 <div class="row form-group">
-                                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Product </label></div>
-                                                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Product" class="form-control"><small class="form-text text-muted">Just the Product Name</small></div>
+                                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Category </label></div>
+                                                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Category" class="form-control"><small class="form-text text-muted">Just the Product Name</small></div>
                                                 </div>
                                                 <button type="submit" class="btn btn-success btn-block">
                                                     Submit
@@ -56,8 +57,9 @@
                                 </div>
                             </div>
                         </td>
-                        <td><a id="deletebtn" class="btn btn-outline-danger btn-sm" href="#" role="button">Delete</a></td>
+                        <td><a id="deletebtn" class="btn btn-outline-danger btn-sm" href="deleteCatefory/{{ $category->id }}" role="button">Delete</a></td>
                     </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
