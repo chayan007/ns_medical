@@ -1,10 +1,20 @@
 @extends('admin.layouts.admin')
 @section('page', 'Companies')
 @section('content')
+    @if(session('update'))
+        <div class="alert alert-success" role="alert">
+            <strong>{{ session('update') }}</strong>
+        </div>
+    @endif
+    @if(session('delete'))
+        <div class="alert alert-danger" role="alert">
+            <strong>{{ session('delete') }}</strong>
+        </div>
+    @endif
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <strong class="card-title">List of Categories</strong>
+                <strong class="card-title">List of Companies</strong>
             </div>
             <div class="card-body">
                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
