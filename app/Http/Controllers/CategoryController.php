@@ -19,13 +19,13 @@ class CategoryController extends Controller
     {
         $category = Categorie::where('id', $id)->firstOrFail();
         $category->delete();
-        return back()->with('status', 'Category Deleted Successfully');
+        return back()->with('delete', 'Category Deleted Successfully');
     }
 
     public function update($id, Request $request){
         $category = Categorie::where('id', $id)->firstOrFail();
         $category->category = $request->category;
         $category->save();
-        return back()->with('status', 'Category Updated Successfully');
+        return back()->with('update', 'Category Updated Successfully');
     }
 }
