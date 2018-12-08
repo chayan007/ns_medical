@@ -33,12 +33,12 @@
                         <td>{{ $company->company }}</td>
                         <td><!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal"
-                                    data-target="#modelId">
+                                    data-target="#modelId{{ $company->company }}">
                                 Update
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="modelId" tabindex="-1" role="dialog"
+                            <div class="modal fade" id="modelId{{ $company->company }}" tabindex="-1" role="dialog"
                                  aria-labelledby="modelTitleId" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -60,7 +60,7 @@
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close
+                                            <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close
                                             </button>
                                         </div>
                                     </div>

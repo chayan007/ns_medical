@@ -30,11 +30,11 @@ Route::group( ['middleware' => 'auth' ], function()
     Route::view('/addCompany', 'admin.addCompany');
     Route::post('/addProduct', 'ProductController@add');
     Route::post('/updateProduct/{id}', 'ProductController@update');
-    Route::post('/deleteProduct/{id}', 'ProductController@delete');
+    Route::get('/deleteProduct/{id}', 'ProductController@delete');
     Route::post('/addCategory', 'CategoryController@add');
     Route::post('/updateCategory/{id}', 'CategoryController@update');
-    Route::post('/deleteCategory/{id}', 'CategoryController@delete');
+    Route::get('/deleteCategory/{id}', 'CategoryController@delete');
     Route::post('/addCompany', 'CompanyController@add');
     Route::post('/updateCompany/{id}', 'CompanyController@update');
-    Route::post('/deleteCompany/{id}', 'CompanyController@delete');
+    Route::get('/deleteCompany/{id}', 'CompanyController@delete');
 });

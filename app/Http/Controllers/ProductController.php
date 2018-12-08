@@ -56,6 +56,19 @@ class ProductController extends Controller
     public function get()
     {
         $products = Product::all();
-        return view('admin.Products', ['products' => $products]);
+        $categories = Categorie::all();
+        $companies = Companie::all();
+        return view('admin.Products', [
+            'products' => $products,
+            'companies' => $companies,
+            'categories' => $categories,
+        ]);
+    }
+
+    public function delete($id)
+    {
+        $product = Product::where('id', $id)->firstOrFail();
+        $product->delete();
+        return back()->with('delete', 'Product has been successfully deleted !');
     }
 }

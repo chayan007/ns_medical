@@ -49,15 +49,15 @@
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="file-input" class=" form-control-label">Image</label></div>
-                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="image1" class="form-control-file"></div>
+                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="img1" class="form-control-file"></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="file-input" class=" form-control-label">Image</label></div>
-                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="image2" class="form-control-file"></div>
+                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="img2" class="form-control-file"></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="file-input" class=" form-control-label">Image</label></div>
-                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="image3" class="form-control-file"></div>
+                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="img3" class="form-control-file"></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="file-input" class=" form-control-label">Brochure</label></div>
@@ -65,7 +65,7 @@
                 </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary btn-sm">
+            <button type="submit" class="btn btn-primary btn-block">
                 <i class="fa fa-dot-circle-o"></i> Submit
             </button>
         </div>

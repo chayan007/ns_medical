@@ -19,7 +19,7 @@
                 </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary btn-sm">
+            <button type="submit" class="btn btn-primary btn-block">
                 <i class="fa fa-dot-circle-o"></i> Submit
             </button>
         </div>
