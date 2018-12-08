@@ -37,7 +37,5 @@ class ProductController extends Controller
             $product->brochure = $path;
         }
         $product->save();
-
-
     }
 }

@@ -30,6 +30,19 @@ Route::get('/admin/dashboard', function () {
 
 Route::group( ['middleware' => 'auth' ], function()
 {
-    Route::get('/admin/');
-
+    Route::get('/product', 'ProductController@get');
+    Route::get('/category', 'CategoryController@get');
+    Route::get('/company', 'CompanyController@get');
+    Route::view('/addProduct', 'admin.addProduct');
+    Route::view('/addCategory', 'admin.addCategory');
+    Route::view('/addCompany', 'admin.addCompany');
+    Route::post('/addProduct', 'ProductController@add');
+    Route::post('/updateProduct/{id}', 'ProductController@update');
+    Route::post('/deleteProduct/{id}', 'ProductController@delete');
+    Route::post('/addCategory', 'CategoryController@add');
+    Route::post('/updateCategory/{id}', 'CategoryController@update');
+    Route::post('/deleteCategory/{id}', 'CategoryController@delete');
+    Route::post('/addCompany', 'CompanyController@add');
+    Route::post('/updateCompany/{id}', 'CompanyController@update');
+    Route::post('/deleteCompany/{id}', 'CompanyController@delete');
 });

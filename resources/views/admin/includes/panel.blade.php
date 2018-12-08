@@ -18,8 +18,8 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Products</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Add</a></li>
-                        <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Delete</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="/addProduct">Add</a></li>
+                        <li><i class="fa fa-exclamation-triangle"></i><a href="/product">Delete</a></li>
                     </ul>
                 </li>
 
@@ -28,16 +28,16 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Companies</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Add</a></li>
-                        <li><i class="fa fa-exclamation-triangle"></i><a href="font-themify.html">Delete</a></li>
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="/addCompany">Add</a></li>
+                        <li><i class="fa fa-exclamation-triangle"></i><a href="/company">Delete</a></li>
                     </ul>
                 </li>
                 <h3 class="menu-title">Categories</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="page-login.html">Add</a></li>
-                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="page-register.html">Delete</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/addCategory">Add</a></li>
+                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="/category">Delete</a></li>
                     </ul>
                 </li>
                 <li class="active">
