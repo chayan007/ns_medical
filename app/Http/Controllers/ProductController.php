@@ -4,18 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Categorie;
+use App\Companie;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+
+    public function show()
+    {
+        $categories = Categorie::all();
+        $companies = Companie::all();
+        return view('admin.addProduct', [
+            'companies' => $companies,
+            'categories' => $categories,
+        ]);
+
+    }
     public function add(Request $request)
     {
         $product = new Product();
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->category = DB::table('categories')->where('category', $request->category)->first()->id;
-        $product->company = DB::table('companies')->where('company', $request->company)->first()->id;
+        $product->category = $request->category;
+        $product->company = $request->company;
         if ($request->hasFile('img1')){
             $file = $request->img1;
             $path = $file->store('public/images');
@@ -37,6 +50,7 @@ class ProductController extends Controller
             $product->brochure = $path;
         }
         $product->save();
+        return back()->with('status', 'Product has been added to site !');
     }
 
     public function get()

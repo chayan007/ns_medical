@@ -1,6 +1,11 @@
 @extends('admin.layouts.admin')
 @section('page', 'Dashboard')
 @section('content')
+    @if(session('status'))
+        <div class="alert alert-success" role="alert">
+            <strong>{{ session('status') }}</strong>
+        </div>
+    @endif
     <div class="card">
         <div class="card-header">
             <strong>Add Product</strong>
@@ -23,22 +28,22 @@
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="selectLg" class=" form-control-label">Category</label></div>
                     <div class="col-12 col-md-9">
-                        <select name="selectLg" id="selectLg" class="form-control-lg form-control">
-                            <option value="0">Please select</option>
-                            <option value="1">Option #1</option>
-                            <option value="2">Option #2</option>
-                            <option value="3">Option #3</option>
+                        <select name="category" id="selectLg" class="form-control-lg form-control">
+                            <option value="#">Please select</option>
+                            @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->category }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="selectLg" class=" form-control-label">Company</label></div>
                     <div class="col-12 col-md-9">
-                        <select name="selectLg" id="selectLg" class="form-control-lg form-control">
-                            <option value="0">Please select</option>
-                            <option value="1">Option #1</option>
-                            <option value="2">Option #2</option>
-                            <option value="3">Option #3</option>
+                        <select name="company" id="selectLg" class="form-control-lg form-control">
+                            <option value="#">Please select</option>
+                            @foreach($companies as $company)
+                                <option value="{{ $company->id }}">{{ $company->company }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

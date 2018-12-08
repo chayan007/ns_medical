@@ -25,7 +25,7 @@ Route::group( ['middleware' => 'auth' ], function()
     Route::get('/product', 'ProductController@get');
     Route::get('/category', 'CategoryController@get');
     Route::get('/company', 'CompanyController@get');
-    Route::view('/addProduct', 'admin.addProduct');
+    Route::get('/addProduct', 'ProductController@show');
     Route::view('/addCategory', 'admin.addCategory');
     Route::view('/addCompany', 'admin.addCompany');
     Route::post('/addProduct', 'ProductController@add');
