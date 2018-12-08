@@ -38,4 +38,10 @@ class ProductController extends Controller
         }
         $product->save();
     }
+
+    public function get()
+    {
+        $products = Product::all();
+        return view('admin.Products', ['products' => $products]);
+    }
 }

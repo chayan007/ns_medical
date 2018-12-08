@@ -28,4 +28,10 @@ class CompanyController extends Controller
         $company->save();
         return back()->with('update', 'Company Updated Successfully');
     }
+
+    public function get()
+    {
+        $companies = Companie::all();
+        return view('admin.Company', ['companies' => $companies]);
+    }
 }

@@ -19,17 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Admin Routes Start
-Route::get('/admin', function () {
-   return view('admin.layouts.admin');
-});
-Route::get('/admin/dashboard', function () {
-    return view('admin.Products');
-});
-//Admin Routes End
-
 Route::group( ['middleware' => 'auth' ], function()
 {
+    Route::view('/admin', 'admin.dashboard');
     Route::get('/product', 'ProductController@get');
     Route::get('/category', 'CategoryController@get');
     Route::get('/company', 'CompanyController@get');

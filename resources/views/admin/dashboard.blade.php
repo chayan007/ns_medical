@@ -6,17 +6,21 @@
         <strong>Admin</strong> Details
     </div>
     <div class="card-body card-block">
-        <form action="" method="post" class="form-inline">
+        <form action="" method="post" class="form">
             <div class="form-group">
                 <label for="exampleInputName2" class="pr-1  form-control-label">Name</label>
-                <input type="text" name="name" id="exampleInputName2" placeholder="nn" class="form-control">
+                <input type="text" name="name" id="exampleInputName2" placeholder="{{ Auth::user()->name }}" class="form-control">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail2" class="px-1  form-control-label">Email</label>
-                <input type="email" name="email" id="exampleInputEmail2" placeholder="mm" class="form-control">
+                <input type="email" name="email" id="exampleInputEmail2" readonly="True" placeholder="{{ Auth::user()->email }}" class="form-control">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail2" class="px-1  form-control-label">Password</label>
+                <input type="password" name="password" id="exampleInputPassword2" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2" class="px-1  form-control-label">Confirm Password</label>
                 <input type="password" name="password" id="exampleInputPassword2" class="form-control">
             </div>
         </form>

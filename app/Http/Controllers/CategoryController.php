@@ -28,4 +28,10 @@ class CategoryController extends Controller
         $category->save();
         return back()->with('update', 'Category Updated Successfully');
     }
+
+    public function get()
+    {
+        $categories = Categorie::all();
+        return view('admin.Category', ['categories' => $categories]);
+    }
 }
