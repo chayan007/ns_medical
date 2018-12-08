@@ -11,3 +11,4 @@
 <script src="{{ asset('plugins/easing/easing.js') }}"></script>
 <script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('js/product.js') }}"></script>

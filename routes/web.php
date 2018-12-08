@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/shop', 'PublicController@displayProducts');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -9,13 +9,19 @@
                             <ul>
                                 <li class="active"><a href="index.html">Home</a></li>
                                 <li class="hassubs">
-                                    <a href="categories.html">Categories</a>
+                                    <a href="#">Categories</a>
                                     <ul>
-                                        <li><a href="categories.html">Category</a></li>
-                                        <li><a href="categories.html">Category</a></li>
-                                        <li><a href="categories.html">Category</a></li>
-                                        <li><a href="categories.html">Category</a></li>
-                                        <li><a href="categories.html">Category</a></li>
+                                        @foreach($categories as $category)
+                                        <li><a href="/shop/category/{{ $category->id }}">{{ $category->category }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="hassubs">
+                                    <a href="#">Companies</a>
+                                    <ul>
+                                        @foreach($companies as $company)
+                                            <li><a href="/shop/company/{{ $company->id }}">{{ $company->company }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="#">Products</a></li>

@@ -145,7 +145,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="newsletter_content text-center">
                     <div class="newsletter_title">Subscribe to our newsletter</div>
-                    <div class="newsletter_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros</p></div>
+                    <div class="newsletter_text"><p>Get notified on clearance sale and offers.</p></div>
                     <div class="newsletter_form_container">
                         <form action="#" id="newsletter_form" class="newsletter_form" method="POST">
                             <input type="email" class="newsletter_input" required="required">
