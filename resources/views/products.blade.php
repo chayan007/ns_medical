@@ -22,8 +22,8 @@
                 @foreach($products as $product)
 
                     <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="{{ Storage::url($product->img_url1) }}" alt="Product Image" height="200px" width="1000px"></div>
+                        <div class="product" style="margin: 10px 20px 10px" data-width="500px">
+                            <div class="product_image"><img src="{{ Storage::url($product->img_url1) }}" alt="Product Image" height="250px" width="1200px"></div>
                             <div class="product_content">
                                 <div class="product_title"><a href="/product/{{ $product->id }}">{{ $product->name }}</a></div>
                                 <div class="product_price">@php echo ($product->price == 0? 'Contact for Price' : 'Rs. '.$product->price) @endphp</div>
@@ -33,6 +33,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                     @endforeach
 

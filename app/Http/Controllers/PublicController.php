@@ -46,6 +46,10 @@ class PublicController extends Controller
     public function displaySingleProduct($id)
     {
         $product = Product::where('id', $id)->firstOrFail();
-        return view('single_product', ['product' => $product]);
+        $relateds = Product::where('category', $product->category)->simplePaginate(4);
+        return view('single_product', [
+            'product' => $product,
+            'relateds' => $relateds,
+        ]);
     }
 }

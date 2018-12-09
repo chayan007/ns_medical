@@ -8,12 +8,12 @@
                 <!-- Product Image -->
                 <div class="col-lg-6">
                     <div class="details_image">
-                        <div class="details_image_large" style="margin: 25px 0px 0px"><img src="{{ asset('images/details_1.jpg') }}" alt=""></div>
+                        <div class="details_image_large" style="margin: 25px 0px 0px"><img height="450px" src="@if($product->img_url1 != NULL) {{ Storage::url($product->img_url1) }} @else {{ asset('images/no_image.png') }}@endif" alt="Product"></div>
                         <div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
-                            <div class="details_image_thumbnail active" data-image="{{ asset('images/details_1.jpg') }}"><img src="{{ asset('images/details_1.jpg') }}" alt=""></div>
-                            <div class="details_image_thumbnail" data-image="{{ asset('images/details_2.jpg') }}"><img src="{{ asset('images/details_2.jpg') }}" alt=""></div>
-                            <div class="details_image_thumbnail" data-image="{{ asset('images/details_3.jpg') }}"><img src="{{ asset('images/details_3.jpg') }}" alt=""></div>
-                            <div class="details_image_thumbnail" data-image="{{ asset('images/details_4.jpg') }}"><img src="{{ asset('images/details_4.jpg') }}" alt=""></div>
+                            <div class="details_image_thumbnail active" data-image="@if($product->img_url1 != NULL) {{ Storage::url($product->img_url1) }} @else {{ asset('images/no_image.png') }}@endif"><img height="200px" width="450px" src="@if($product->img_url1 != NULL) {{ Storage::url($product->img_url1) }} @else {{ asset('images/no_image.png') }}@endif" alt=""></div>
+                            <div class="details_image_thumbnail" data-image="@if($product->img_url2 != NULL) {{ Storage::url($product->img_url2) }} @else {{ asset('images/no_image.png') }}@endif"><img height="200px" width="450px" src="@if($product->img_url2 != NULL) {{ Storage::url($product->img_url2) }} @else {{ asset('images/no_image.png') }}@endif" alt=""></div>
+                            <div class="details_image_thumbnail" data-image="@if($product->img_url3 != NULL) {{ Storage::url($product->img_url3) }} @else {{ asset('images/no_image.png') }}@endif"><img height="200px" width="450px" src="@if($product->img_url3 != NULL) {{ Storage::url($product->img_url3) }} @else {{ asset('images/no_image.png') }}@endif" alt=""></div>
+                            <div class="details_image_thumbnail" data-image="@if($product->img_url2 != NULL) {{ Storage::url($product->img_url2) }} @else {{ asset('images/no_image.png') }}@endif"><img height="200px" width="450px" src="@if($product->img_url2 != NULL) {{ Storage::url($product->img_url2) }} @else {{ asset('images/no_image.png') }}@endif" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -22,8 +22,13 @@
                 <div class="col-lg-6">
                     <div class="details_content" style="margin: 50px 0px 10px">
                         <div class="details_name">{{ $product->name }}</div>
-                        <div class="details_discount">Rs. @php echo ($product->price + (25/100 * $product->price))@endphp</div>
-                        <div class="details_price">Rs. {{ $product->price }}</div>
+                        <a href="/shop/company/{{ $product->company }}"><span class="badge badge-pill badge-warning" style="margin: 10px 0px 10px; font-family: 'Courier New'">{{ DB::table('companies')->where('id',$product->company)->first()->company }}</span></a><br>
+                        @if($product->price != 0)
+                            <div class="details_discount">Rs. @php echo ($product->price + (25/100 * $product->price))@endphp</div>
+                            <div class="details_price">Rs. {{ $product->price }}</div>
+                        @else
+                            <div class="details_price">Contact for Price</div>
+                        @endif
 
                         <!-- In Stock -->
                         <div class="in_stock_container">
@@ -31,7 +36,7 @@
                             <span>In Stock</span>
                         </div>
                         <div class="details_text">
-                            <p> {{ $product->description }}.</p>
+                            <p>Category : <a class="btn btn-outline-primary" href="/shop/category/{{ $product->category }}"role="button">{{ $categories->where('id', $product->category)->first()->category }}</a></p>
                         </div>
 
                         <!-- Product Quantity -->
@@ -67,7 +72,7 @@
                         <div class="description_title">Description</div>
                     </div>
                     <div class="description_text">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
+                        <p>{{ $product->description }}.</p>
                     </div>
                 </div>
             </div>
@@ -87,71 +92,19 @@
             <div class="col">
 
                 <div class="product_grid">
+                    @foreach($relateds as $related)
 
                     <!-- Product -->
                     <div class="product">
-                        <div class="product_image"><img src="images/product_1.jpg" alt=""></div>
-                        <div class="product_extra product_new"><a href="categories.html">New</a></div>
+                        <div class="product_image"><img height="200px" width="300px" src="{{ Storage::url($related->img_url1) }}" alt=""></div>
                         <div class="product_content">
-                            <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                            <div class="product_price">$670</div>
+                            <div class="product_title"><a href="/product/{{ $related->id }}">{{ $related->name }}</a></div>
+                            <div class="product_price">@php echo ($product->price == 0? 'Contact for Price' : 'Rs. '.$product->price) @endphp</div>
+                            <a href="/shop/company/{{ $product->company }}"><span class="badge badge-pill badge-warning" style="margin: 10px 0px 10px; font-family: 'Courier New'">{{ DB::table('companies')->where('id',$product->company)->first()->company }}</span></a>
                         </div>
                     </div>
 
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="images/product_2.jpg" alt=""></div>
-                        <div class="product_extra product_sale"><a href="categories.html">Sale</a></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                            <div class="product_price">$520</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="images/product_3.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                            <div class="product_price">$710</div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product">
-                        <div class="product_image"><img src="images/product_4.jpg" alt=""></div>
-                        <div class="product_content">
-                            <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                            <div class="product_price">$330</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Newsletter -->
-
-<div class="newsletter">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="newsletter_border"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="newsletter_content text-center">
-                    <div class="newsletter_title">Subscribe to our newsletter</div>
-                    <div class="newsletter_text"><p>Get notified on clearance sale and offers.</p></div>
-                    <div class="newsletter_form_container">
-                        <form action="#" id="newsletter_form" class="newsletter_form" method="POST">
-                            <input type="email" class="newsletter_input" required="required">
-                            <button class="newsletter_button trans_200"><span>Subscribe</span></button>
-                        </form>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
