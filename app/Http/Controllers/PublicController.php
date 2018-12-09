@@ -43,8 +43,9 @@ class PublicController extends Controller
 
     }
 
-    public function displaySingleProduct()
+    public function displaySingleProduct($id)
     {
-
+        $product = Product::where('id', $id)->firstOrFail();
+        return view('single_product', ['product' => $product]);
     }
 }
