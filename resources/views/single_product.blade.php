@@ -37,19 +37,38 @@
                         </div>
                         <div class="details_text">
                             <p>Category : <a class="btn btn-outline-primary" href="/shop/category/{{ $product->category }}"role="button">{{ $categories->where('id', $product->category)->first()->category }}</a></p>
+                            <form id="MyForm" action="#" method="post" style="display: none; padding: 20px">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="">E-Mail</label>
+                                    <input type="text" class="form-control" name="" id=""
+                                           aria-describedby="helpId" placeholder="Type your email id">
+                                    <small id="helpId" class="form-text text-muted">So that we could mail you important things</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Phone No.</label>
+                                    <input type="number" class="form-control" name="" id=""
+                                           aria-describedby="helpId" placeholder="Type your contact number">
+                                    <small id="helpId" class="form-text text-muted">So that we could explain you in details</small>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block">DONE !</button>
+                            </form>
                         </div>
 
                         <!-- Product Quantity -->
                         <div class="product_quantity_container">
-                            <div class="product_quantity clearfix">
-                                <span>Qty</span>
-                                <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-                                <div class="quantity_buttons">
-                                    <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                                    <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                                </div>
-                            </div>
-                            <div class="button cart_button"><a href="#">Add to cart</a></div>
+                            <div class="button cart_button"><a href="{{ Storage::url($product->brochure) }}" style="color: #1DFFCA;">Brochure</a></div>
+                            <div class="button cart_button"><a href="#" onclick="toggler()">Place Enquiry</a></div>
+                            <script>
+                                function toggler() {
+                                    var x = document.getElementById("MyForm");
+                                    if (x.style.display === "none") {
+                                        x.style.display = "block";
+                                    } else {
+                                        x.style.display = "none";
+                                    }
+                                }
+                            </script>
                         </div>
 
                         <!-- Share -->
@@ -101,6 +120,9 @@
                             <div class="product_title"><a href="/product/{{ $related->id }}">{{ $related->name }}</a></div>
                             <div class="product_price">@php echo ($product->price == 0? 'Contact for Price' : 'Rs. '.$product->price) @endphp</div>
                             <a href="/shop/company/{{ $product->company }}"><span class="badge badge-pill badge-warning" style="margin: 10px 0px 10px; font-family: 'Courier New'">{{ DB::table('companies')->where('id',$product->company)->first()->company }}</span></a>
+                            <div class="showMore">
+                                <a class="btn btn-info btn-block" href="/product/{{ $product->id }}" role="button">Details</a>
+                            </div>
                         </div>
                     </div>
 

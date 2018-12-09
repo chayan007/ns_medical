@@ -32,14 +32,8 @@ class PublicController extends Controller
     public function displayProducts()
     {
         $products = Product::simplePaginate(20);
-        $categories = Categorie::all();
-        $companies = Companie::all();
 
-        return view('products', [
-            'products' => $products,
-            'companies' => $companies,
-            'categories' => $categories,
-        ]);
+        return view('products', ['products' => $products]);
 
     }
 
@@ -51,5 +45,17 @@ class PublicController extends Controller
             'product' => $product,
             'relateds' => $relateds,
         ]);
+    }
+
+    public function displayBycompany($id)
+    {
+        $products = Product::where('company', $id)->simplePaginate(20);
+        return view('products', ['products' => $products]);
+    }
+
+    public function displayBycategory($id)
+    {
+        $products = Product::where('category', $id)->simplePaginate(20);
+        return view('products', ['products' => $products]);
     }
 }
