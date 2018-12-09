@@ -37,17 +37,34 @@
                         </div>
                         <div class="details_text">
                             <p>Category : <a class="btn btn-outline-primary" href="/shop/category/{{ $product->category }}"role="button">{{ $categories->where('id', $product->category)->first()->category }}</a></p>
-                            <form id="MyForm" action="#" method="post" style="display: none; padding: 20px">
+                            @if(session('mail-success'))
+                                <div class="alert alert-success" role="alert" style="margin: 10px 0px 10px">
+                                    <strong>{{ session('mail-success') }}</strong>
+                                </div>
+                            @endif
+                            @if(session('mail-fail'))
+                                <div class="alert alert-danger" role="alert" style="margin: 10px 0px 10px">
+                                    <strong>{{ session('mail-fail') }}</strong>
+                                </div>
+                            @endif
+                            <form id="MyForm" action="/contact" method="post" style="display: none; padding: 20px">
                                 @csrf
+                                <input type="hidden" name="product" value="{{ $product->name }}">
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control" name="name" id=""
+                                           aria-describedby="helpId" placeholder="Type your name">
+                                    <small id="helpId" class="form-text text-muted">Just a name to call you.</small>
+                                </div>
                                 <div class="form-group">
                                     <label for="">E-Mail</label>
-                                    <input type="text" class="form-control" name="" id=""
+                                    <input type="email" class="form-control" name="email" id=""
                                            aria-describedby="helpId" placeholder="Type your email id">
                                     <small id="helpId" class="form-text text-muted">So that we could mail you important things</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Phone No.</label>
-                                    <input type="text" class="form-control" name="" id=""
+                                    <input type="text" class="form-control" name="phone" id=""
                                            aria-describedby="helpId" placeholder="Type your contact number">
                                     <small id="helpId" class="form-text text-muted">So that we could explain you in details</small>
                                 </div>

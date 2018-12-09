@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PublicController@index');
 
 Route::get('/shop', 'PublicController@displayProducts');
 
@@ -23,12 +21,17 @@ Route::get('/shop/company/{id}', 'PublicController@displayBycompany');
 
 Route::get('/shop/category/{id}', 'PublicController@displayBycategory');
 
+Route::post('/contact', 'PublicController@contact');
+
+Route::post('/newsletter', 'PublicController@newsletter');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group( ['middleware' => 'auth' ], function()
 {
+    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
     Route::view('/admin', 'admin.dashboard');
     Route::get('/product', 'ProductController@get');
     Route::get('/category', 'CategoryController@get');

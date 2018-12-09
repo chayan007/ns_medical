@@ -4,28 +4,58 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use App\Categorie;
-use App\Companie;
+use PHPMailer\PHPMailer\PHPMailer;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
     public function index()
     {
-        return view();
+        $products = Product::simplePaginate(8);
+        return view('home', ['products' => $products]);
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
-
+        $name = $request->name;
+        $email = 'sonicxxx7@gmail.com';
+        $phone = $request->phone;
+        $product = $request->product;
+        $title = 'Someone has requested Product Enquiry';
+        $content = $name." has enquired about -> ".$product." \n Email : '$email' \n Phone: '$phone'";
+        try {
+            Mail::send('send', ['title' => $title, 'content' => $content], function ($message)
+            {
+                $message->subject('Enquiry from Website _ REPLY FAST');
+                $message->from('xyz@gmail.com', 'XYZ');
+                $message->to('sonicxxx7@gmail.com');
+            });
+        }
+        catch (Exception $e)
+        {
+            return back()->with('mail-fail', $e);
+        }
+        return back()->with('mail-success', 'You shall be contacted in a short span of time');
     }
 
-    public function requestPrice()
+    public function newsletter(Request $request)
     {
-
-    }
-
-    public function newsfeed()
-    {
+        $email = $request->contact;
+        $title = 'Someone has shown interest in your Company';
+        $content = 'He/She wishes to be notified about your latest products and offers through '.$email;
+        try {
+            Mail::send('send', ['title' => $title, 'content' => $content], function ($message)
+            {
+                $message->subject('NS Medico Subscribed _ Followers');
+                $message->from('xyz@gmail.com', 'XYZ');
+                $message->to('chayandatta007@gmail.com');
+            });
+        }
+        catch (Exception $e)
+        {
+            return back()->with('mail-fail', $e);
+        }
+        return back();
 
     }
 

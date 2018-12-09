@@ -14,7 +14,8 @@
                     <div class="newsletter_text"><p>Get Updates to the Latest Products and Offers.</p></div>
                     <div class="newsletter_form_container">
                         <form action="/newsletter" method="POST" id="newsletter_form" class="newsletter_form">
-                            <input type="email" class="newsletter_input" required="required">
+                            @csrf
+                            <input type="text" class="newsletter_input" required="required" name="contact" placeholder="Enter Your Email or Phone">
                             <button class="newsletter_button trans_200"><span>Subscribe</span></button>
                         </form>
                     </div>
