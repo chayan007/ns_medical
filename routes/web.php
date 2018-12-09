@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('/shop', 'PublicController@displayProducts');
 
+Route::get('/product/{id}', 'PublicController@displaySingleProduct');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

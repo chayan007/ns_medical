@@ -42,4 +42,9 @@ class PublicController extends Controller
         ]);
 
     }
+
+    public function displaySingleProduct()
+    {
+
+    }
 }

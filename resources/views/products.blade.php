@@ -23,13 +23,13 @@
 
                     <!-- Product -->
                         <div class="product">
-                            <div class="product_image"><img src="{{ Storage::url($product->img_url1) }}" alt="Product Image" height="350px" width="800px"></div>
+                            <div class="product_image"><img src="{{ Storage::url($product->img_url1) }}" alt="Product Image" height="200px" width="1000px"></div>
                             <div class="product_content">
-                                <div class="product_title"><a href="product.html">{{ $product->name }}</a></div>
+                                <div class="product_title"><a href="/product/{{ $product->id }}">{{ $product->name }}</a></div>
                                 <div class="product_price">@php echo ($product->price == 0? 'Contact for Price' : 'Rs. '.$product->price) @endphp</div>
                                 <a href="/shop/company/{{ $product->company }}"><span class="badge badge-pill badge-warning" style="margin: 10px 0px 10px; font-family: 'Courier New'">{{ DB::table('companies')->where('id',$product->company)->first()->company }}</span></a>
                                 <div class="showMore">
-                                    <a name="" id="" class="btn btn-info" href="#" role="button">Show More</a>
+                                    <a class="btn btn-info btn-block" href="/product/{{ $product->id }}" role="button">Details</a>
                                 </div>
                             </div>
                         </div>
