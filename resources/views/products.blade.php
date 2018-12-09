@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'Products')
+@section('title', 'Products | NS Medico')
 @section('page', 'Products')
 @section('count', $products->count())
 @section('content')

@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Phone No.</label>
-                                    <input type="number" class="form-control" name="" id=""
+                                    <input type="text" class="form-control" name="" id=""
                                            aria-describedby="helpId" placeholder="Type your contact number">
                                     <small id="helpId" class="form-text text-muted">So that we could explain you in details</small>
                                 </div>
