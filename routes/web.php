@@ -13,6 +13,8 @@
 
 Route::get('/', 'PublicController@index');
 
+Route::view('/contact_us', 'contact');
+
 Route::get('/shop', 'PublicController@displayProducts');
 
 Route::get('/product/{id}', 'PublicController@displaySingleProduct');
@@ -24,6 +26,7 @@ Route::get('/shop/category/{id}', 'PublicController@displayBycategory');
 Route::post('/contact', 'PublicController@contact');
 
 Route::post('/newsletter', 'PublicController@newsletter');
+
 
 Auth::routes();
 

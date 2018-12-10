@@ -13,4 +13,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/product_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}"">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/contact_responsive.css') }}">
 </head>

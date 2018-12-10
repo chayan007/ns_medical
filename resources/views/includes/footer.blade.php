@@ -36,7 +36,7 @@
                 <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
                     <div class="footer_logo"><a href="#">NS Medical Agency.</a></div>
                     <div class="copyright ml-auto mr-auto">
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://chayan007.github.io/freelance_portfolio/" target="_blank">Chayan</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://chayan007.github.io/freelance_portfolio/" target="_blank" style="color: #f27173">Chayan</a>
                     </div>
                     <div class="footer_social ml-lg-auto">
                         <ul>

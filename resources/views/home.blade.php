@@ -11,14 +11,32 @@
 
             <!-- Slider Item -->
             <div class="owl-item home_slider_item">
-                <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                <div class="home_slider_background" style="background-image:linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),url({{ asset('images/1.jpg') }})"></div>
                 <div class="home_slider_content_container">
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                     <div class="home_slider_title">A new Online Shop experience.</div>
-                                    <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
+                                    <div class="home_slider_subtitle">Check our medical products and energize your hospital environment.</div>
+                                    <div class="button button_light home_button"><a href="/shop">Shop Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Item -->
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image:linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),url({{ asset('images/2.jpg') }})"></div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+                                    <div class="home_slider_title">24 x 7 Technical Support.</div>
+                                    <div class="home_slider_subtitle">Call us anytime and get consulted about latest medical instruments trends.</div>
                                     <div class="button button_light home_button"><a href="#">Shop Now</a></div>
                                 </div>
                             </div>
@@ -29,33 +47,15 @@
 
             <!-- Slider Item -->
             <div class="owl-item home_slider_item">
-                <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                <div class="home_slider_background" style="background-image:linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),url({{ asset('images/3.jpg') }}); "></div>
                 <div class="home_slider_content_container">
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">A new Online Shop experience.</div>
-                                    <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
-                                    <div class="button button_light home_button"><a href="#">Shop Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slider Item -->
-            <div class="owl-item home_slider_item">
-                <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
-                <div class="home_slider_content_container">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">A new Online Shop experience.</div>
-                                    <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
-                                    <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                    <div class="home_slider_title">Changing Medical Scenarios.</div>
+                                    <div class="home_slider_subtitle">Latest technology for hospitals and nursing homes.</div>
+                                    <div class="button button_light home_button"><a href="/shop">Shop Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -67,11 +67,11 @@
 
         <!-- Home Slider Dots -->
 
-        <div class="home_slider_dots_container">
+        <div class="home_slider_dots_container" style="margin: 20px 0px 0px;">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="home_slider_dots">
+                        <div class="home_slider_dots" style="padding-top: 40px;">
                             <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
                                 <li class="home_slider_custom_dot active">01.</li>
                                 <li class="home_slider_custom_dot">02.</li>

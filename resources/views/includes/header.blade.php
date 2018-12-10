@@ -7,7 +7,7 @@
                         <div class="logo"><a href="#">NS Medical Agency.</a></div>
                         <nav class="main_nav">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="/">Home</a></li>
                                 <li class="hassubs">
                                     <a href="#">Categories</a>
                                     <ul>
@@ -24,8 +24,8 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#">Products</a></li>
-                                <li><a href="">Contact</a></li>
+                                <li><a href="/shop">Products</a></li>
+                                <li><a href="/contact_us">Contact</a></li>
                             </ul>
                         </nav>
                         <div class="header_extra ml-auto">

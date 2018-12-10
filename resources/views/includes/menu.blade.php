@@ -8,18 +8,25 @@
                 </form>
             </div>
             <ul class="page_menu_nav menu_mm">
-                <li class="page_menu_item menu_mm"><a href="index.html">Home<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item menu_mm"><a href="/">Home<i class="fa fa-angle-down"></i></a></li>
                 <li class="page_menu_item has-children menu_mm">
-                    <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
+                    <a href="/shop">Categories<i class="fa fa-angle-down"></i></a>
                     <ul class="page_menu_selection menu_mm">
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        @foreach($categories as $category)
+                            <li class="page_menu_item menu_mm"><a href="/shop/category/{{ $category->id }}">{{ $category->category }}<i class="fa fa-angle-down"></i></a></li>
+                        @endforeach
                     </ul>
                 </li>
-                <li class="page_menu_item menu_mm"><a href="index.html">Products<i class="fa fa-angle-down"></i></a></li>
-                <li class="page_menu_item menu_mm"><a href="#">Contact<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item has-children menu_mm">
+                    <a href="/shop">Companies<i class="fa fa-angle-down"></i></a>
+                    <ul class="page_menu_selection menu_mm">
+                        @foreach($companies as $company)
+                            <li class="page_menu_item menu_mm"><a href="/shop/company/{{ $company->id }}">{{ $company->company }}<i class="fa fa-angle-down"></i></a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                <li class="page_menu_item menu_mm"><a href="/shop">Products<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item menu_mm"><a href="/contact_us">Contact<i class="fa fa-angle-down"></i></a></li>
             </ul>
         </div>
     </div>
