@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('title', 'Home | NS Medical')
+@section('content')
 
 <!-- Home -->
 
@@ -18,7 +19,7 @@
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                     <div class="home_slider_title">A new Online Shop experience.</div>
-                                    <div class="home_slider_subtitle">Check our medical products and energize your hospital environment.</div>
+                                    <div class="home_slider_subtitle">Check our medical products and energize your hospital environment. We deliver the best for your patients.</div>
                                     <div class="button button_light home_button"><a href="/shop">Shop Now</a></div>
                                 </div>
                             </div>
@@ -36,8 +37,8 @@
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                     <div class="home_slider_title">24 x 7 Technical Support.</div>
-                                    <div class="home_slider_subtitle">Call us anytime and get consulted about latest medical instruments trends.</div>
-                                    <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                    <div class="home_slider_subtitle">Call us anytime and get consulted about latest medical instruments trends. Helping you selflessly is our main aim.</div>
+                                    <div class="button button_light home_button"><a href="/contact_us">Contact Us</a></div>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +55,7 @@
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                     <div class="home_slider_title">Changing Medical Scenarios.</div>
-                                    <div class="home_slider_subtitle">Latest technology for hospitals and nursing homes.</div>
+                                    <div class="home_slider_subtitle">Latest technology for hospitals and nursing homes for a better hospital management.</div>
                                     <div class="button button_light home_button"><a href="/shop">Shop Now</a></div>
                                 </div>
                             </div>
@@ -67,11 +68,11 @@
 
         <!-- Home Slider Dots -->
 
-        <div class="home_slider_dots_container" style="margin: 20px 0px 0px;">
+        <div class="home_slider_dots_container">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="home_slider_dots" style="padding-top: 40px;">
+                        <div class="home_slider_dots">
                             <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
                                 <li class="home_slider_custom_dot active">01.</li>
                                 <li class="home_slider_custom_dot">02.</li>
@@ -99,7 +100,7 @@
                 @foreach($products as $product)
 
                     <!-- Product -->
-                        <div class="product" style="margin: 10px 20px 10px" data-width="500px">
+                        <div class="product" data-width="500px">
                             <div class="product_image"><img src="{{ Storage::url($product->img_url1) }}" alt="Product Image" height="250px" width="1200px"></div>
                             <div class="product_content">
                                 <div class="product_title"><a href="/product/{{ $product->id }}">{{ $product->name }}</a></div>
@@ -128,7 +129,7 @@
         <div class="row">
             <div class="col">
                 <div class="avds_xl_container clearfix">
-                    <div class="avds_xl_background" style="background-image:url(images/avds_xl.jpg)"></div>
+                    <div class="avds_xl_background" style="background-image:url({{ asset('images/avds_xl.jpg') }}"></div>
                     <div class="avds_xl_content">
                         <div class="avds_title">Amazing Devices</div>
                         <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
@@ -182,3 +183,4 @@
         </div>
     </div>
 </div>
+@endsection

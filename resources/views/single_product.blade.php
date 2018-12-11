@@ -1,5 +1,9 @@
 @extends('layouts.public')
 @section('title', $product->name)
+@section('dependencies')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/product_responsive.css') }}">
+@endsection
 @section('content')
     <div class="product_details">
         <div class="container">
@@ -149,4 +153,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+    <script src="{{ asset('js/product.js') }}"></script>
 @endsection

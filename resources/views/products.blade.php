@@ -2,6 +2,10 @@
 @section('title', 'Products | NS Medico')
 @section('page', 'Products')
 @section('count', $products->count())
+@section('dependencies')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/product_responsive.css') }}">
+@endsection
 @section('content')
 
 <div class="products">
@@ -44,4 +48,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+    <script src="{{ asset('js/product.js') }}"></script>
 @endsection

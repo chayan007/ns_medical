@@ -1,5 +1,9 @@
 @extends('layouts.public')
 @section('title', 'Contact | NS Medical')
+@section('dependencies')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/contact_responsive.css') }}">
+@endsection
 @section('content')
 <div class="contact">
     <div class="container">
@@ -21,12 +25,12 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <!-- Name -->
-                                    <label for="contact_name">Phone</label>
+                                    <label for="contact_name">Phone*</label>
                                     <input type="text" id="contact_name" name="phone" class="contact_input" required="required">
                                 </div>
                                 <div class="col-xl-6 last_name_col">
                                     <!-- Last Name -->
-                                    <label for="contact_last_name">Email</label>
+                                    <label for="contact_last_name">Email*</label>
                                     <input type="text" id="contact_last_name" name="email" class="contact_input" required="required">
                                 </div>
                             </div>
@@ -51,17 +55,17 @@
                         </ul>
                     </div>
                     <div class="contact_info_section">
-                        <div class="contact_info_title">Shippiing & Returns</div>
+                        <div class="contact_info_title">24 x 7 Technical Helpline</div>
                         <ul>
                             <li>Phone: <span>+53 345 7953 3245</span></li>
                             <li>Email: <span>yourmail@gmail.com</span></li>
                         </ul>
                     </div>
                     <div class="contact_info_section">
-                        <div class="contact_info_title">Information</div>
+                        <div class="contact_info_title">Office Address</div>
                         <ul>
-                            <li>Phone: <span>+53 345 7953 3245</span></li>
-                            <li>Email: <span>yourmail@gmail.com</span></li>
+                            <li>Address: <span>Trikon Park, Barasat, Kolkata 124</span></li>
+                            <li>Country: <span>India</span></li>
                         </ul>
                     </div>
                 </div>
@@ -83,4 +87,8 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="{{ asset('js/contact.js') }}"></script>
 @endsection
