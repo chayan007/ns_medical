@@ -50,15 +50,15 @@
                     <div class="contact_info_section">
                         <div class="contact_info_title">Marketing</div>
                         <ul>
-                            <li>Phone: <span>+53 345 7953 3245</span></li>
-                            <li>Email: <span>yourmail@gmail.com</span></li>
+                            <li>Phone: <span>+91 983 0293 951</span></li>
+                            <li>Email: <span>nsmedicaleagency2018@gmail.com</span></li>
                         </ul>
                     </div>
                     <div class="contact_info_section">
                         <div class="contact_info_title">24 x 7 Technical Helpline</div>
                         <ul>
-                            <li>Phone: <span>+53 345 7953 3245</span></li>
-                            <li>Email: <span>yourmail@gmail.com</span></li>
+                            <li>Phone: <span>+91 912 3731 953</span></li>
+                            <li>Email: <span>nsgoswami09@gmail.com</span></li>
                         </ul>
                     </div>
                     <div class="contact_info_section">
