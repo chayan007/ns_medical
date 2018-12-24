@@ -30,7 +30,7 @@ Route::post('/newsletter', 'PublicController@newsletter');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PublicController@index')->name('home');
 
 Route::group( ['middleware' => 'auth' ], function()
 {

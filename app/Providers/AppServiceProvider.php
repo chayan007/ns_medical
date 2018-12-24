@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with([
                 'categories' => \App\Categorie::all(),
                 'companies' => \App\Companie::all(),
+                'products' => \App\Product::all(),
             ]);
         });
     }
